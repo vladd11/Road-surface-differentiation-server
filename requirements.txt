@@ -1,0 +1,8 @@
+imutils~=0.5.4
+numpy~=1.22.2
+fastai~=1.0.61
+setuptools~=60.9.3
+Cython~=0.29.28
+opencv-python-headless~=4.5.5.62
+openrouteservice~=2.3.3
+websockets~=10.2
