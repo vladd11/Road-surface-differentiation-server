@@ -1,4 +1,3 @@
-ROUTING_KEY = '5b3ce3597851110001cf6248dff63f02cff84e50a0cbd265048be6d6'
 OUTPUT_PATH = '/home/rozhk/output'
 VIDEO_LATENCY = 10  # In seconds
 
