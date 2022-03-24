@@ -1,6 +1,5 @@
 OUTPUT_PATH = '/home/rozhk/output'
 # PYTHONASYNCIODEBUG = True
-TARGET = (50.244607, 53.215471)
 
 import asyncio
 import time
@@ -11,9 +10,10 @@ import numpy
 import openrouteservice as openrouteservice
 from fastai.vision import *
 from websockets import serve
-import os
+
 from color import colorfull_fast, color_roads
 
+TARGET = (float(sys.argv[2]), float(sys.argv[1]))
 ROUTING_KEY = os.environ.get('ROUTING_KEY')
 
 torch.set_num_threads(2)
