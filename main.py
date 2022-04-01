@@ -41,8 +41,6 @@ def get_center(prediction):
         opening, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     contours = imutils.grab_contours(contours)
 
-    cv2.imwrite('test.png', opening)
-
     temp = []
     for c in contours:
         # compute the center of the contour
@@ -66,8 +64,10 @@ async def echo(websocket):
             await websocket.send('img')
         else:
             await websocket.send('img')
+            cvimg = cv2.imdecode(np.frombuffer(message, np.uint8), cv2.IMREAD_COLOR)
+            cv2.imwrite('test.png', cvimg)
             prediction, width, height = predict(
-                cv2.imdecode(np.frombuffer(message, np.uint8), cv2.IMREAD_COLOR))
+                cvimg)
 
             cv2.imwrite(os.path.join(OUTPUT_PATH, f'{time.time()}.png'),
                         colorfull_fast(prediction[0], numpy.empty(dtype=numpy.uint8, shape=(width, height, 3)), width,
